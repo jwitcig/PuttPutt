@@ -1,0 +1,6 @@
+framework module Pods_PuttPutt {
+  umbrella header "Pods-PuttPutt-umbrella.h"
+
+  export *
+  module * { export * }
+}

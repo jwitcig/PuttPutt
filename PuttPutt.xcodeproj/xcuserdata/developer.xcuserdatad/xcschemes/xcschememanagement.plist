@@ -4,14 +4,44 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>MessagesExtension-Dev.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>1</integer>
+		</dict>
 		<key>MessagesExtension.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>0</integer>
 		</dict>
+		<key>Telekenesis.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>7</integer>
+		</dict>
+		<key>asdf.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>8</integer>
+		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
+		<key>8B77E7AD1DDEA95900902F41</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>8B77E7B31DDEA9A600902F41</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>8B77E7B71DDEA9E500902F41</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>8BD53AC11DDE76A50082593B</key>
 		<dict>
 			<key>primary</key>

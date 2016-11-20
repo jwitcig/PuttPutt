@@ -7,12 +7,31 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		00B4AF96DFA012296C27BFAC /* Pods_PuttPutt.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C57F9DDAF14E56EF74041AD /* Pods_PuttPutt.framework */; };
+		8B6AE07D1DDFE13300595EB4 /* Hole2.sks in Resources */ = {isa = PBXBuildFile; fileRef = 8B6AE07C1DDFE13300595EB4 /* Hole2.sks */; };
+		8B77E7BC1DDEAAAA00902F41 /* Telekinesis.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 8BD53B031DDEA7CD0082593B /* Telekinesis.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		8BA758371DDFF68A0073A894 /* Hole3.sks in Resources */ = {isa = PBXBuildFile; fileRef = 8BA758361DDFF68A0073A894 /* Hole3.sks */; };
+		8BA758391DDFFD750073A894 /* Hole4.sks in Resources */ = {isa = PBXBuildFile; fileRef = 8BA758381DDFFD750073A894 /* Hole4.sks */; };
+		8BB222E91DE03CAE00A0C551 /* Hole1.sks in Resources */ = {isa = PBXBuildFile; fileRef = 8BB222E81DE03CAE00A0C551 /* Hole1.sks */; };
 		8BD53ABC1DDE76A50082593B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8BD53ABB1DDE76A50082593B /* Assets.xcassets */; };
 		8BD53AC31DDE76A50082593B /* MessagesExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 8BD53AC21DDE76A50082593B /* MessagesExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		8BD53AC81DDE76A50082593B /* Messages.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8BD53AC71DDE76A50082593B /* Messages.framework */; };
 		8BD53ACB1DDE76A50082593B /* MessagesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BD53ACA1DDE76A50082593B /* MessagesViewController.swift */; };
 		8BD53ACE1DDE76A50082593B /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8BD53ACC1DDE76A50082593B /* MainInterface.storyboard */; };
 		8BD53AD01DDE76A50082593B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8BD53ACF1DDE76A50082593B /* Assets.xcassets */; };
+		8BD53AE11DDE7C530082593B /* ActionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BD53ADB1DDE7C530082593B /* ActionView.swift */; };
+		8BD53AE21DDE7C530082593B /* ActionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8BD53ADC1DDE7C530082593B /* ActionView.xib */; };
+		8BD53AE31DDE7C530082593B /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BD53ADD1DDE7C530082593B /* GameViewController.swift */; };
+		8BD53AE41DDE7C530082593B /* GameViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8BD53ADE1DDE7C530082593B /* GameViewController.xib */; };
+		8BD53AE51DDE7C530082593B /* ScoreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BD53ADF1DDE7C530082593B /* ScoreView.swift */; };
+		8BD53AE61DDE7C530082593B /* ScoreView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8BD53AE01DDE7C530082593B /* ScoreView.xib */; };
+		8BD53AE81DDE7D170082593B /* PuttGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BD53AE71DDE7D170082593B /* PuttGame.swift */; };
+		8BD53AEE1DDE80380082593B /* PuttScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BD53AEC1DDE80380082593B /* PuttScene.swift */; };
+		8BD53AF01DDE8B630082593B /* GoogleService-Info-Dev.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8BD53AEF1DDE8B630082593B /* GoogleService-Info-Dev.plist */; };
+		8BD53AFE1DDEA5A60082593B /* PuttStyleKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BD53AFD1DDEA5A60082593B /* PuttStyleKit.swift */; };
+		8BD53B001DDEA6510082593B /* ArrowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BD53AFF1DDEA6510082593B /* ArrowView.swift */; };
+		8BD53B041DDEA7CD0082593B /* Telekinesis.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8BD53B031DDEA7CD0082593B /* Telekinesis.framework */; };
+		97F75DD4C9059E9773B0FAF0 /* Pods_MessagesExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C45484B2427BBD70264CAE8C /* Pods_MessagesExtension.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -26,6 +45,16 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
+		8B77E7BB1DDEAAA000902F41 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				8B77E7BC1DDEAAAA00902F41 /* Telekinesis.framework in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		8BD53AD71DDE76A50082593B /* Embed App Extensions */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -40,6 +69,12 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		097B8C121385D7D2F3398DA7 /* Pods-MessagesExtension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MessagesExtension.release.xcconfig"; path = "Pods/Target Support Files/Pods-MessagesExtension/Pods-MessagesExtension.release.xcconfig"; sourceTree = "<group>"; };
+		6029B3F68653718858AE68AC /* Pods-PuttPutt.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PuttPutt.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PuttPutt/Pods-PuttPutt.debug.xcconfig"; sourceTree = "<group>"; };
+		8B6AE07C1DDFE13300595EB4 /* Hole2.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Hole2.sks; sourceTree = "<group>"; };
+		8BA758361DDFF68A0073A894 /* Hole3.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Hole3.sks; sourceTree = "<group>"; };
+		8BA758381DDFFD750073A894 /* Hole4.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Hole4.sks; sourceTree = "<group>"; };
+		8BB222E81DE03CAE00A0C551 /* Hole1.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Hole1.sks; sourceTree = "<group>"; };
 		8BD53AB81DDE76A50082593B /* PuttPutt.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PuttPutt.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8BD53ABB1DDE76A50082593B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8BD53ABD1DDE76A50082593B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -49,20 +84,57 @@
 		8BD53ACD1DDE76A50082593B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
 		8BD53ACF1DDE76A50082593B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8BD53AD11DDE76A50082593B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8BD53ADB1DDE7C530082593B /* ActionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActionView.swift; sourceTree = "<group>"; };
+		8BD53ADC1DDE7C530082593B /* ActionView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ActionView.xib; sourceTree = "<group>"; };
+		8BD53ADD1DDE7C530082593B /* GameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
+		8BD53ADE1DDE7C530082593B /* GameViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GameViewController.xib; sourceTree = "<group>"; };
+		8BD53ADF1DDE7C530082593B /* ScoreView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScoreView.swift; sourceTree = "<group>"; };
+		8BD53AE01DDE7C530082593B /* ScoreView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ScoreView.xib; sourceTree = "<group>"; };
+		8BD53AE71DDE7D170082593B /* PuttGame.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PuttGame.swift; sourceTree = "<group>"; };
+		8BD53AEC1DDE80380082593B /* PuttScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PuttScene.swift; sourceTree = "<group>"; };
+		8BD53AEF1DDE8B630082593B /* GoogleService-Info-Dev.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info-Dev.plist"; sourceTree = "<group>"; };
+		8BD53AFD1DDEA5A60082593B /* PuttStyleKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PuttStyleKit.swift; sourceTree = "<group>"; };
+		8BD53AFF1DDEA6510082593B /* ArrowView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArrowView.swift; sourceTree = "<group>"; };
+		8BD53B031DDEA7CD0082593B /* Telekinesis.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Telekinesis.framework; sourceTree = "<group>"; };
+		8C57F9DDAF14E56EF74041AD /* Pods_PuttPutt.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PuttPutt.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B517013EB446AA897228E7A9 /* Pods-MessagesExtension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MessagesExtension.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MessagesExtension/Pods-MessagesExtension.debug.xcconfig"; sourceTree = "<group>"; };
+		C13FC445CF7B361ED44341EE /* Pods-PuttPutt.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PuttPutt.release.xcconfig"; path = "Pods/Target Support Files/Pods-PuttPutt/Pods-PuttPutt.release.xcconfig"; sourceTree = "<group>"; };
+		C45484B2427BBD70264CAE8C /* Pods_MessagesExtension.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MessagesExtension.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		69630DD3DA47BE59F8F676B0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				00B4AF96DFA012296C27BFAC /* Pods_PuttPutt.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		8BD53ABF1DDE76A50082593B /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				8BD53AC81DDE76A50082593B /* Messages.framework in Frameworks */,
+				97F75DD4C9059E9773B0FAF0 /* Pods_MessagesExtension.framework in Frameworks */,
+				8BD53B041DDEA7CD0082593B /* Telekinesis.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		20CBC2897DB0B151D55A955E /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				B517013EB446AA897228E7A9 /* Pods-MessagesExtension.debug.xcconfig */,
+				097B8C121385D7D2F3398DA7 /* Pods-MessagesExtension.release.xcconfig */,
+				6029B3F68653718858AE68AC /* Pods-PuttPutt.debug.xcconfig */,
+				C13FC445CF7B361ED44341EE /* Pods-PuttPutt.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		8BD53AB11DDE76A50082593B = {
 			isa = PBXGroup;
 			children = (
@@ -70,6 +142,7 @@
 				8BD53AC91DDE76A50082593B /* MessagesExtension */,
 				8BD53AC61DDE76A50082593B /* Frameworks */,
 				8BD53AB91DDE76A50082593B /* Products */,
+				20CBC2897DB0B151D55A955E /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -94,7 +167,10 @@
 		8BD53AC61DDE76A50082593B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				8BD53B031DDEA7CD0082593B /* Telekinesis.framework */,
 				8BD53AC71DDE76A50082593B /* Messages.framework */,
+				C45484B2427BBD70264CAE8C /* Pods_MessagesExtension.framework */,
+				8C57F9DDAF14E56EF74041AD /* Pods_PuttPutt.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -104,10 +180,49 @@
 			children = (
 				8BD53ACA1DDE76A50082593B /* MessagesViewController.swift */,
 				8BD53ACC1DDE76A50082593B /* MainInterface.storyboard */,
+				8BD53ADD1DDE7C530082593B /* GameViewController.swift */,
+				8BD53ADE1DDE7C530082593B /* GameViewController.xib */,
+				8BFA247E1DE12299005F5F9C /* Holes */,
+				8BFA247F1DE122C6005F5F9C /* Putt */,
+				8BFA24801DE12304005F5F9C /* Popups */,
+				8BD53AFD1DDEA5A60082593B /* PuttStyleKit.swift */,
+				8BD53AEF1DDE8B630082593B /* GoogleService-Info-Dev.plist */,
+				8BD53AE01DDE7C530082593B /* ScoreView.xib */,
 				8BD53ACF1DDE76A50082593B /* Assets.xcassets */,
 				8BD53AD11DDE76A50082593B /* Info.plist */,
 			);
 			path = MessagesExtension;
+			sourceTree = "<group>";
+		};
+		8BFA247E1DE12299005F5F9C /* Holes */ = {
+			isa = PBXGroup;
+			children = (
+				8BB222E81DE03CAE00A0C551 /* Hole1.sks */,
+				8B6AE07C1DDFE13300595EB4 /* Hole2.sks */,
+				8BA758361DDFF68A0073A894 /* Hole3.sks */,
+				8BA758381DDFFD750073A894 /* Hole4.sks */,
+			);
+			name = Holes;
+			sourceTree = "<group>";
+		};
+		8BFA247F1DE122C6005F5F9C /* Putt */ = {
+			isa = PBXGroup;
+			children = (
+				8BD53AE71DDE7D170082593B /* PuttGame.swift */,
+				8BD53AEC1DDE80380082593B /* PuttScene.swift */,
+			);
+			name = Putt;
+			sourceTree = "<group>";
+		};
+		8BFA24801DE12304005F5F9C /* Popups */ = {
+			isa = PBXGroup;
+			children = (
+				8BD53AFF1DDEA6510082593B /* ArrowView.swift */,
+				8BD53ADB1DDE7C530082593B /* ActionView.swift */,
+				8BD53ADC1DDE7C530082593B /* ActionView.xib */,
+				8BD53ADF1DDE7C530082593B /* ScoreView.swift */,
+			);
+			name = Popups;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -117,8 +232,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 8BD53AD81DDE76A50082593B /* Build configuration list for PBXNativeTarget "PuttPutt" */;
 			buildPhases = (
+				E35C743BAEF25483DFE6A79F /* [CP] Check Pods Manifest.lock */,
 				8BD53AB61DDE76A50082593B /* Resources */,
 				8BD53AD71DDE76A50082593B /* Embed App Extensions */,
+				69630DD3DA47BE59F8F676B0 /* Frameworks */,
+				3BF5D2D5FFCB1AEF71F8E593 /* [CP] Embed Pods Frameworks */,
+				1F7F6D64E9D1C0EB223F6702 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -134,9 +253,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 8BD53AD41DDE76A50082593B /* Build configuration list for PBXNativeTarget "MessagesExtension" */;
 			buildPhases = (
+				6E05EABBB8ADA5410E254D49 /* [CP] Check Pods Manifest.lock */,
 				8BD53ABE1DDE76A50082593B /* Sources */,
 				8BD53ABF1DDE76A50082593B /* Frameworks */,
 				8BD53AC01DDE76A50082593B /* Resources */,
+				82C91BD456BA11256DAF21A2 /* [CP] Copy Pods Resources */,
+				8B77E7BB1DDEAAA000902F41 /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -201,18 +323,111 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8BD53AE41DDE7C530082593B /* GameViewController.xib in Resources */,
+				8BA758371DDFF68A0073A894 /* Hole3.sks in Resources */,
+				8BB222E91DE03CAE00A0C551 /* Hole1.sks in Resources */,
+				8BD53AE21DDE7C530082593B /* ActionView.xib in Resources */,
 				8BD53AD01DDE76A50082593B /* Assets.xcassets in Resources */,
 				8BD53ACE1DDE76A50082593B /* MainInterface.storyboard in Resources */,
+				8BD53AE61DDE7C530082593B /* ScoreView.xib in Resources */,
+				8BD53AF01DDE8B630082593B /* GoogleService-Info-Dev.plist in Resources */,
+				8BA758391DDFFD750073A894 /* Hole4.sks in Resources */,
+				8B6AE07D1DDFE13300595EB4 /* Hole2.sks in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		1F7F6D64E9D1C0EB223F6702 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PuttPutt/Pods-PuttPutt-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		3BF5D2D5FFCB1AEF71F8E593 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PuttPutt/Pods-PuttPutt-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6E05EABBB8ADA5410E254D49 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		82C91BD456BA11256DAF21A2 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MessagesExtension/Pods-MessagesExtension-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E35C743BAEF25483DFE6A79F /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		8BD53ABE1DDE76A50082593B /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8BD53B001DDEA6510082593B /* ArrowView.swift in Sources */,
+				8BD53AE81DDE7D170082593B /* PuttGame.swift in Sources */,
+				8BD53AFE1DDEA5A60082593B /* PuttStyleKit.swift in Sources */,
+				8BD53AE11DDE7C530082593B /* ActionView.swift in Sources */,
+				8BD53AEE1DDE80380082593B /* PuttScene.swift in Sources */,
+				8BD53AE51DDE7C530082593B /* ScoreView.swift in Sources */,
+				8BD53AE31DDE7C530082593B /* GameViewController.swift in Sources */,
 				8BD53ACB1DDE76A50082593B /* MessagesViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -334,9 +549,16 @@
 		};
 		8BD53AD51DDE76A50082593B /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B517013EB446AA897228E7A9 /* Pods-MessagesExtension.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "iMessage App Icon";
 				DEVELOPMENT_TEAM = 349WFX4WJR;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/MessagesExtension",
+					"$(PROJECT_DIR)",
+				);
+				GOOGLE_SERVICES_FILE = "GoogleService-Info-Dev";
 				INFOPLIST_FILE = MessagesExtension/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.jwitapps.PuttPutt.MessagesExtension;
@@ -348,9 +570,16 @@
 		};
 		8BD53AD61DDE76A50082593B /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 097B8C121385D7D2F3398DA7 /* Pods-MessagesExtension.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "iMessage App Icon";
 				DEVELOPMENT_TEAM = 349WFX4WJR;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/MessagesExtension",
+					"$(PROJECT_DIR)",
+				);
+				GOOGLE_SERVICES_FILE = "GoogleService-Info";
 				INFOPLIST_FILE = MessagesExtension/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.jwitapps.PuttPutt.MessagesExtension;
@@ -362,6 +591,7 @@
 		};
 		8BD53AD91DDE76A50082593B /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6029B3F68653718858AE68AC /* Pods-PuttPutt.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -375,6 +605,7 @@
 		};
 		8BD53ADA1DDE76A50082593B /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C13FC445CF7B361ED44341EE /* Pods-PuttPutt.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -405,6 +636,7 @@
 				8BD53AD61DDE76A50082593B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		8BD53AD81DDE76A50082593B /* Build configuration list for PBXNativeTarget "PuttPutt" */ = {
 			isa = XCConfigurationList;
@@ -413,6 +645,7 @@
 				8BD53ADA1DDE76A50082593B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ActionView" customModule="MessagesExtension" customModuleProvider="target"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="ActionView" customModule="MessagesExtension" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="544" height="298"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TJi-oc-CjD">
+                    <rect key="frame" x="0.0" y="74.5" width="544" height="149"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6NS-kb-6L5">
+                            <rect key="frame" x="0.0" y="0.0" width="544" height="149"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="44"/>
+                            <state key="normal" title="action"/>
+                            <connections>
+                                <action selector="buttonPressedWithSender:" destination="iN0-l3-epB" eventType="touchUpInside" id="6dV-76-6Qj"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <constraints>
+                        <constraint firstItem="6NS-kb-6L5" firstAttribute="width" secondItem="TJi-oc-CjD" secondAttribute="width" id="6kA-GS-NCw"/>
+                        <constraint firstItem="6NS-kb-6L5" firstAttribute="centerX" secondItem="TJi-oc-CjD" secondAttribute="centerX" id="FWZ-6C-ImK"/>
+                        <constraint firstItem="6NS-kb-6L5" firstAttribute="centerY" secondItem="TJi-oc-CjD" secondAttribute="centerY" id="b0x-cW-FEd"/>
+                        <constraint firstItem="6NS-kb-6L5" firstAttribute="height" secondItem="TJi-oc-CjD" secondAttribute="height" id="bdG-hU-uMP"/>
+                        <constraint firstAttribute="height" relation="lessThanOrEqual" constant="150" id="mQi-MU-bhn"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="TJi-oc-CjD" firstAttribute="width" secondItem="iN0-l3-epB" secondAttribute="width" id="0o4-fG-8DQ"/>
+                <constraint firstItem="TJi-oc-CjD" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="Zjn-Ej-gWW"/>
+                <constraint firstItem="TJi-oc-CjD" firstAttribute="height" secondItem="iN0-l3-epB" secondAttribute="height" multiplier="0.5" priority="900" id="qhc-Sq-d7V"/>
+                <constraint firstItem="TJi-oc-CjD" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="qxb-A9-2kr"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="button" destination="6NS-kb-6L5" id="zMW-Bt-3xK"/>
+            </connections>
+            <point key="canvasLocation" x="25" y="-175"/>
+        </view>
+    </objects>
+</document>

@@ -1,0 +1,6 @@
+framework module iMessageTools {
+  umbrella header "iMessageTools-umbrella.h"
+
+  export *
+  module * { export * }
+}
