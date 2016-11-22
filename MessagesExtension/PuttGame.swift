@@ -10,6 +10,9 @@ import GameplayKit
 import Messages
 import UIKit
 
+import SVGgh
+import SWXMLHash
+
 import Game
 import iMessageTools
 import SwiftTools
@@ -66,8 +69,8 @@ struct PuttSession: SessionType, StringDictionaryRepresentable, Messageable {
     typealias Constraint = Putt
     typealias InitialData = PuttInitialData
     typealias InstanceData = PuttInstanceData
-    typealias MessageWriterType = PopperMessageWriter
-    typealias MessageLayoutBuilderType = PopperMessageLayoutBuilder
+    typealias MessageWriterType = PuttMessageWriter
+    typealias MessageLayoutBuilderType = PuttMessageLayoutBuilder
     
     typealias Scene = PuttScene
     
@@ -114,25 +117,35 @@ extension PuttSession {
 struct PuttInstanceData: InstanceDataType, StringDictionaryRepresentable {
     typealias Constraint = Putt
     
-    let score: Double
+    let shots: [Int]
+    let opponentShots: [Int]
     let winner: Team.OneOnOne?
     
     var dictionary: [String: String] {
+        let shotsString = shots.reduce("") {$0 + "\($1)."}
+        let opponentShotsString = opponentShots.reduce("") {$0 + "\($1)."}
         return [
-            "instance-score": score.string!,
+            "instance-shots": shotsString,
+            "instance-opponentShots": opponentShotsString,
             "instance-winner": winner?.rawValue ?? "incomplete",
         ]
     }
     
-    init(score: Double, winner: Team.OneOnOne?) {
-        self.score = score
+    init(shots: [Int], opponentShots: [Int]? = nil, winner: Team.OneOnOne?) {
+        self.shots = shots
+        self.opponentShots = opponentShots ?? []
         self.winner = winner
     }
     
     init?(dictionary: [String: String]) {
-        guard let score = dictionary["instance-score"]?.double else { return nil }
+        guard let shots = dictionary["instance-shots"] else { return nil }
+        guard let opponentShots = dictionary["instance-opponentShots"] else { return nil }
         guard let winner = dictionary["instance-winner"] else { return nil }
-        self.init(score: score, winner: Team.OneOnOne(rawValue: winner))
+        
+        let shotsList = shots.characters.split(separator: ".").map{String($0).int!}
+        let opponentShotsList = opponentShots.characters.split(separator: ".").map{String($0).int!}
+        
+        self.init(shots: shotsList, opponentShots: opponentShotsList, winner: Team.OneOnOne(rawValue: winner))
     }
 }
 
@@ -157,8 +170,7 @@ struct PuttInitialData: InitialDataType, StringDictionaryRepresentable {
     }
     
     static func random() -> PuttInitialData {
-        let holeNumber = GKRandomDistribution(lowestValue: 1, highestValue: 4).nextInt()
-        return PuttInitialData(holeNumber: holeNumber)
+        return PuttInitialData(holeNumber: 1)
     }
 }
 
@@ -184,7 +196,7 @@ struct PuttMessageReader: MessageReader, SessionSpecific {
     }
 }
 
-struct PopperMessageWriter: MessageWriter {
+struct PuttMessageWriter: MessageWriter {
     var message: MSMessage
     var data: [String: String]
     
@@ -195,17 +207,16 @@ struct PopperMessageWriter: MessageWriter {
     
     func isValid(data: [String : String]) -> Bool {
         guard let _ = data["ended"]?.bool else { return false }
-        guard let _ = data["initial-seed"]?.int else { return false }
-        guard let _ = data["initial-desiredShapeQuantity"]?.int else { return false }
-        guard let _ = data["instance-score"]?.double else { return false }
+        guard let _ = data["initial-holeNumber"]?.int else { return false }
+        guard let _ = data["instance-shots"] else { return false }
+        guard let _ = data["instance-opponentShots"] else { return false }
         guard let _ = data["instance-winner"] else { return false }
         return true
     }
 }
 
-struct PopperMessageLayoutBuilder: MessageLayoutBuilder {
+struct PuttMessageLayoutBuilder: MessageLayoutBuilder {
     let session: PuttSession
-    
     init(session: PuttSession) {
         self.session = session
     }
@@ -227,6 +238,8 @@ struct PopperMessageLayoutBuilder: MessageLayoutBuilder {
             case .them:
                 let randomIndex = GKRandomDistribution(lowestValue: 0, highestValue: losers.count-1).nextInt()
                 layout.caption = "You won. " + losers[randomIndex]
+            case .tie:
+                layout.caption = "We tied."
             }
         }
         return layout
@@ -235,8 +248,49 @@ struct PopperMessageLayoutBuilder: MessageLayoutBuilder {
 }
 
 struct HoleSetup {
-    static func wallSVGs(forHole hole: Int) -> [String] {
+    static func scale(forHole hole: Int) -> CGFloat {
         switch hole {
+        case 1:
+            return 1
+        default:
+            return 2
+        }
+    }
+    
+    static func ballLocation(forHole hole: Int) -> CGPoint {
+        let url = Bundle(for: Putt.self).url(forResource: "hole\(hole)", withExtension: "svg")!
+        
+        let xml = SWXMLHash.parse(try! Data(contentsOf: url))
+        
+        let pointData = xml["svg"]["path"].filter {
+            $0.element!.attribute(by: "id")!.text == "hole\(hole)-ballLocation"
+        }.first!.element!
+            .attribute(by: "d")!.text
+            .replacingOccurrences(of: "M ", with: "")
+            .components(separatedBy: ",")
+
+        let formatter = NumberFormatter()
+        return CGPoint(x: formatter.number(from: pointData.first!)!.intValue,
+                       y: -formatter.number(from: pointData.last!)!.intValue)
+    }
+    
+    static func wallSVGs(forHole hole: Int) -> [String] {
+        
+        let url = Bundle(for: Putt.self).url(forResource: "hole\(hole)", withExtension: "svg")!
+    
+        let xml = SWXMLHash.parse(try! Data(contentsOf: url))
+        
+        let wallItems = xml["svg"]["path"].filter {
+            (try! $0.value(ofAttribute: "id") as! String).contains("green")
+        }
+        
+        return wallItems.map {
+            try! $0.value(ofAttribute: "d") as! String
+        }
+        
+        switch hole {
+            
+            
         case 1:
             return [
                 "M -159,-360 L -159,359 159.49,359 160,-359.5 -159,-360 Z M -159,-360"
@@ -247,12 +301,12 @@ struct HoleSetup {
             ]
         case 3:
             return [
-                "M -244,358 L 97,358 -44,-152.7 56,-152.7 125,122.37 245,122.37 245,-359 -244,-359 -244,358 Z M -244,358"
+                "M -245,359 L 96,359 -45,-151.7 55,-151.7 124,123.37 244,123.37 244,-358 -245,-358 -245,359 Z M -245,359"
             ]
         case 4:
             return [
                 "M 101.07,-359 C 101.07,-359 244,-240.78 244,-240.78 L 244,-73.6 C 244,-73.6 209.16,-44.79 173.88,-15.61 144.39,8.78 114.6,33.42 104.59,41.7 110.7,62.55 197.61,359 197.61,359 L -198.72,359 C -198.72,359 -112.23,75.78 -102.38,43.53 -116.74,31.65 -244,-73.6 -244,-73.6 L -244,-240.78 -101.07,-359 101.07,-359 101.07,-359 Z M 101.07,-359",
-                   "M -126.75,-116.5 L 126.75,-116.5 126.75,-98.75 -126.75,-98.75 -126.75,-116.5 Z M -126.75,-116.5"
+                "M -150,-139 L -150,-119 150,-119 150,-139 -150,-139 Z M -150,-139"
             ]
         default:
             fatalError()

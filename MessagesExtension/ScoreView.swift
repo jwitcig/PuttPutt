@@ -18,18 +18,17 @@ class ScoreView: UIView {
     
     var yourScore: String {
         get { return yourScoreLabel.text ?? "" }
-        set { yourScoreLabel.text = "your time: \(newValue)" }
+        set { yourScoreLabel.text = "\(newValue)" }
     }
     var theirScore: String? {
         get { return theirScoreLabel.text }
-        set { theirScoreLabel.text = newValue != nil ? "their time: \(newValue!)" : nil }
+        set { theirScoreLabel.text = newValue != nil ? "\(newValue!)" : nil }
     }
     
     var winner: Team.OneOnOne? {
         didSet {
             
             guard let winner = winner else {
-                winnerLabel.text = "Their turn."
                 return
             }
             
@@ -38,6 +37,8 @@ class ScoreView: UIView {
                 winnerLabel.text = "You won!"
             case .them:
                 winnerLabel.text = "They won."
+            case .tie:
+                winnerLabel.text = "It's a tie!"
             }
         }
     }

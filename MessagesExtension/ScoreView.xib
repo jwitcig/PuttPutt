@@ -16,26 +16,37 @@
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="Ah0-gc-Xtf">
-                    <rect key="frame" x="0.5" y="0.0" width="490" height="399"/>
+                    <rect key="frame" x="0.0" y="0.0" width="490" height="399"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Finished!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aen-0u-i2O">
-                            <rect key="frame" x="0.0" y="0.0" width="490" height="156.5"/>
+                            <rect key="frame" x="0.0" y="0.0" width="490" height="187"/>
                             <fontDescription key="fontDescription" type="system" pointSize="44"/>
-                            <color key="textColor" red="0.0" green="0.59874441964285718" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            <color key="textColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="score: 9.234" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d2p-Vi-XZX">
-                            <rect key="frame" x="0.0" y="156.5" width="490" height="121.5"/>
-                            <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="34"/>
-                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            <nil key="highlightedColor"/>
-                        </label>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="score: 9.234" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cAv-a4-kmv">
-                            <rect key="frame" x="0.0" y="278" width="490" height="121"/>
-                            <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="34"/>
-                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            <nil key="highlightedColor"/>
-                        </label>
+                        <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="iQS-cf-9AW">
+                            <rect key="frame" x="0.0" y="187" width="490" height="212"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="64" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d2p-Vi-XZX">
+                                    <rect key="frame" x="0.0" y="0.0" width="163.5" height="212"/>
+                                    <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="34"/>
+                                    <color key="textColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eDg-92-6Ye">
+                                    <rect key="frame" x="163.5" y="0.0" width="163" height="212"/>
+                                    <fontDescription key="fontDescription" type="system" weight="black" pointSize="50"/>
+                                    <color key="textColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="72" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cAv-a4-kmv">
+                                    <rect key="frame" x="326.5" y="0.0" width="163.5" height="212"/>
+                                    <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="34"/>
+                                    <color key="textColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                        </stackView>
                     </subviews>
                 </stackView>
             </subviews>

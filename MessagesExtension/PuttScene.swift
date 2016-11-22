@@ -10,7 +10,9 @@ import GameplayKit
 import Messages
 import SpriteKit
 
+import Cartography
 import SVGgh
+import SWXMLHash
 
 import Game
 import iMessageTools
@@ -52,11 +54,15 @@ class PuttScene: SKScene, GameScene, SKPhysicsContactDelegate {
     var ball: SKSpriteNode!
     var holeImage: SKSpriteNode!
     
+    var shotsTaken = 0
+    
+    var holeLabel: UILabel!
+    
     static func create(initial providedInitial: Session.InitialData?, previousSession: Session?, delegate gameCycleDelegate: GameCycleDelegate, viewAttacher: ViewAttachable) -> PuttScene {
 
         let initial = providedInitial ?? previousSession?.initial ?? Session.InitialData.random()
-        
-        let nodePath = Bundle.main.path(forResource: "Hole\(initial.holeNumber)", ofType: "sks")
+                
+        let nodePath = Bundle.main.path(forResource: "Hole \(initial.holeNumber)", ofType: "sks")
         
         let data = try! NSData(contentsOfFile: nodePath!, options: NSData.ReadingOptions.mappedIfSafe) as Data
         
@@ -75,13 +81,14 @@ class PuttScene: SKScene, GameScene, SKPhysicsContactDelegate {
                          initial: initial,
                          cycle: SessionCycle(started: scene.started, finished: scene.finished, generateSession: scene.gatherSessionData))
         scene.setupScene()
+    
         return scene
     }
     
     func setupScene() {
         view?.showsPhysics = true
         
-        scaleMode = .aspectFill
+//        scaleMode = .aspectFill
         
         backgroundColor = UIColor(red: 126, green: 229, blue: 32, alpha: 1)
         
@@ -92,8 +99,12 @@ class PuttScene: SKScene, GameScene, SKPhysicsContactDelegate {
 
         setupCamera(centerOn: ball, within: holeImage)
         
+        setBackground()
+        
+        let scale = HoleSetup.scale(forHole: holeNumber)
+
         HoleSetup.wallSVGs(forHole: holeNumber).map {
-            let path = SVGPathGenerator.newCGPath(fromSVGPath: $0, whileApplying: CGAffineTransform(scaleX: 1, y: -1))!
+            let path = SVGPathGenerator.newCGPath(fromSVGPath: $0, whileApplying: CGAffineTransform(scaleX: scale, y: -scale))!
             
             let wall = SKNode()
             wall.physicsBody = SKPhysicsBody(edgeLoopFrom: path)
@@ -105,6 +116,9 @@ class PuttScene: SKScene, GameScene, SKPhysicsContactDelegate {
             wall.physicsBody!.friction = 0
             return wall
         }.forEach(addChild)
+        
+        ball.position = HoleSetup.ballLocation(forHole: holeNumber)
+                            .applying(CGAffineTransform(scaleX: scale, y: scale))
     }
     
     func setupGameNodes() {
@@ -128,15 +142,72 @@ class PuttScene: SKScene, GameScene, SKPhysicsContactDelegate {
         ball.physicsBody!.friction = 1.0
         ball.physicsBody!.allowsRotation = false
         
+//        let url = Bundle(for: Putt.self).url(forResource: "hole\(holeNumber!)", withExtension: "svg")!
+//        let xml = SWXMLHash.parse(try! Data(contentsOf: url))
+//        var elements: [XMLIndexer] = []
+//        func enumerate(indexer: XMLIndexer) {
+//            for child in indexer.children {
+//                elements.append(child)
+//                enumerate(indexer: child)
+//            }
+//        }
+//        enumerate(indexer: xml)
+//        
+//        let baller = elements.filter {
+//            print($0.element!.name)
+//            return $0.element!.name == "circle"
+//        }.first!
+
+//        let shape = SKShapeNode(circleOfRadius: CGFloat(baller.element!.attribute(by: "r")!.text.int!))
+//        
+//        let fillString =  baller.element!.attribute(by: "fill")!.text
+//            .replacingOccurrences(of: "rgb(", with: "")
+//            .replacingOccurrences(of: ")", with: "")
+//        shape.fillColor = UIColor(ciColor: CIColor(string: fillString))
+//        
+//        let strokeString =  baller.element!.attribute(by: "stroke")!.text
+//            .replacingOccurrences(of: "rgb(", with: "")
+//            .replacingOccurrences(of: ")", with: "")
+//        
+//        shape.strokeColor = UIColor(ciColor: CIColor(string: strokeString))
+//        shape.lineWidth = CGFloat(baller.element!.attribute(by: "stroke-width")!.text.int!)
+//
+//        let trans = "translate(-184,214)".range(of: "translate(")
+
+//        shape.position = "translate(-184,214)"
+        
+//        addChild(shape)
+        
+//        return wallItems.map {
+//            try! $0.value(ofAttribute: "d") as! String
+//        }
+        
         holeImage = childNode(withName: "HoleImage")! as! SKSpriteNode
     }
+
     
     public required init(initial: PuttInitialData?, previousSession: PuttSession?, delegate: GameCycleDelegate, viewAttacher: ViewAttachable) {
         fatalError()
     }
-    
+        
     func started() {
+        updateHoleLabel()
+        
         gameCycleDelegate.started(game: game)
+    }
+    
+    func updateHoleLabel() {
+        if holeLabel == nil {
+            holeLabel = UILabel()
+            view!.addSubview(holeLabel)
+            constrain(holeLabel, view!) {
+                $0.top == $1.topMargin + 5
+                $0.centerX == $1.centerX
+            }
+        }
+        
+        holeLabel.text = "Hole \(holeNumber!)   -   Shot \(shotsTaken)"
+        holeLabel.sizeToFit()
     }
     
     func setupCamera(centerOn center: SKNode, within limiter: SKNode) {
@@ -164,10 +235,63 @@ class PuttScene: SKScene, GameScene, SKPhysicsContactDelegate {
         ]
     }
     
+    func setBackground() {
+        let background = SKSpriteNode(imageNamed: "Background")
+        background.size = size
+        background.zPosition = -1
+        addChild(background)
+    }
+    
+    var blurView: UIVisualEffectView?
+
     func finished(currentSession: Session) {
-        showScore(game: popper, yourScore: currentSession.instance.score,
-                               theirScore: opponentsSession?.instance.score)
-        gameCycleDelegate.finished(session: currentSession)
+        
+        if currentSession.ended {
+            let currentData = currentSession.gameData
+            if currentData.winner == .you {
+                ["ConfettiRed", "ConfettiBlue", "ConfettiGreen"].map {
+                    let emitter = SKEmitterNode(fileNamed: $0)!
+                    emitter.position = CGPoint(x: 0, y: frame.height/2)
+                    emitter.particlePositionRange = CGVector(dx: -600, dy: 0)
+                    emitter.particleBirthRate = 500
+                    return emitter
+                }.forEach(addChild)
+            }
+            
+            let scoreView = ScoreView.create()
+            
+            let blur = UIBlurEffect(style: .dark)
+            blurView = UIVisualEffectView(effect: blur)
+            blurView!.translatesAutoresizingMaskIntoConstraints = false
+            scoreView.addSubview(blurView!)
+            scoreView.sendSubview(toBack: blurView!)
+
+            scoreView.yourScore = currentData.shots.reduce(0, +).string!
+            scoreView.theirScore = currentData.opponentShots.reduce(0, +).string!
+            scoreView.winner = currentData.winner
+            viewAttacher.display(view: scoreView)
+            constrain(scoreView, viewAttacher.superview) {
+                $0.width == $1.width * (5/6.0)
+                $0.height == $1.height / 3
+            }
+            constrain(blurView!, scoreView) {
+                $0.leading == $1.leading
+                $0.trailing == $1.trailing
+                $0.top == $1.top
+                $0.bottom == $1.bottom
+            }
+            DispatchQueue.main.async {
+                sleep(2)
+                self.gameCycleDelegate.finished(session: currentSession)
+            }
+        } else {
+            DispatchQueue.main.async {
+                sleep(1)
+                self.gameCycleDelegate.finished(session: currentSession)
+            }
+        }
+        
+        
     }
     
     private func showScore(game: GameType, yourScore: Double, theirScore: Double? = nil) {
@@ -185,7 +309,13 @@ class PuttScene: SKScene, GameScene, SKPhysicsContactDelegate {
         scoreView.theirScore = theirFormattedScore
         scoreView.winner = nil
         if let theirScore = theirScore {
-            scoreView.winner = yourScore < theirScore ? .you : .them
+            if yourScore < theirScore {
+                scoreView.winner = .you
+            } else if theirScore < yourScore {
+                scoreView.winner = .them
+            } else {
+                scoreView.winner = nil
+            }
         }
     }
 
@@ -206,11 +336,30 @@ class PuttScene: SKScene, GameScene, SKPhysicsContactDelegate {
         }
         
         if let _ = body(ofCategory: .ball), let _ = body(ofCategory: .hole) {
-            print("game over")
-            let dropInHole = SKAction.move(to: self.hole.position, duration: 0.2)
-            self.ball.run(dropInHole)
-            self.ball.physicsBody = nil
+            ballShotInHole()
         }
+    }
+    
+    func ballShotInHole() {
+        let dropInHole = SKAction.move(to: hole.position, duration: 0.2)
+        self.ball.run(dropInHole) {
+            self.game.finish()
+        }
+        self.ball.physicsBody = nil
+    }
+    
+    func takeShot() {
+        let angle = arrow.angle * (.pi / 180.0) + (.pi / 2)
+        let power = 200 * arrow.scale
+        ball.physicsBody?.applyImpulse(CGVector(dx: cos(angle)*power, dy: sin(angle)*power))
+        arrow.removeFromSuperview()
+        
+        shotTaken()
+    }
+    
+    func shotTaken() {
+        shotsTaken += 1
+        updateHoleLabel()
     }
     
     let arrow = ArrowView(frame: CGRect(x: 0, y: 0, width: 300, height: 300))
@@ -243,23 +392,48 @@ class PuttScene: SKScene, GameScene, SKPhysicsContactDelegate {
     }
     
     func touchUp(atPoint position: CGPoint) {
-        let angle = arrow.angle * (.pi / 180.0) + (.pi / 2)
-        let power = 200 * arrow.scale
-        ball.physicsBody?.applyImpulse(CGVector(dx: cos(angle)*power, dy: sin(angle)*power))
-        arrow.removeFromSuperview()
+        takeShot()
     }
     
     func gatherSessionData() -> Session {
-        let yourScore: Double = popper.lifeCycle.elapsedTime
+        // localPlayerShots = my opponent's opponent (me)
+        var localPlayerShots: [Int] = []
+        if let existingShots = opponentsSession?.instance.opponentShots, existingShots.count > 0 {
+            localPlayerShots = existingShots
+        }
+        localPlayerShots += [shotsTaken]
         
         var winner: Team.OneOnOne?
-        if let theirScore = opponentsSession?.instance.score {
-            winner = yourScore < theirScore ? .you : .them
+        
+        let opponentShots = opponentsSession?.instance.shots
+        
+        if let opponentShots = opponentsSession?.instance.shots,
+                opponentShots.count == 9, localPlayerShots.count == 9 {
+
+            let yourScore = localPlayerShots.reduce(0, +)
+            let theirScore = opponentShots.reduce(0, +)
+            if yourScore < theirScore {
+                winner = .you
+            } else if theirScore < yourScore {
+                winner = .them
+            } else {
+                winner = .tie
+            }
         }
         
-        let instance = Session.InstanceData(score: yourScore, winner: winner)
-        let initial = Session.InitialData(holeNumber: popper.initial.holeNumber)
-        return Session(instance: instance, initial: initial, ended: winner != nil, messageSession: nil)
+        let instance = Session.InstanceData(shots: localPlayerShots,
+                                    opponentShots: opponentsSession?.instance.shots,
+                                           winner: winner)
+
+        let localPlayLastHole = localPlayerShots.count
+        let opponentLastHole = opponentShots == nil ? nil : opponentShots!.count
+        
+        let holeNumber = localPlayLastHole == opponentLastHole ? localPlayLastHole + 1 : localPlayLastHole
+        
+        return Session(instance: instance,
+                        initial: Session.InitialData(holeNumber: holeNumber),
+                          ended: winner != nil,
+                 messageSession: nil)
     }
     
     override func update(_ currentTime: TimeInterval) {

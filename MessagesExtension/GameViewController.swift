@@ -10,6 +10,7 @@ import Messages
 import SpriteKit
 import UIKit
 
+import Cartography
 import FirebaseAnalytics
 
 import Game
@@ -55,7 +56,7 @@ class GameViewController: MSMessagesAppViewController, GameController {
     typealias GameType = Putt
     typealias Session = PuttSession
     typealias Scene = PuttScene
-    
+        
     var messageSender: MessageSender!
     var orientationManager: OrientationManager!
         
@@ -146,6 +147,15 @@ class GameViewController: MSMessagesAppViewController, GameController {
 
 extension GameViewController: ViewAttachable {
     var superview: UIView { return view }
+    
+    public func display(view: UIView) {
+        superview.addSubview(view)
+        
+        constrain(view, superview) {
+            $0.centerX == $1.centerX
+            $0.centerY == $1.centerY
+        }
+    }
 }
 
 extension GameViewController: GameCycleDelegate {
@@ -161,7 +171,7 @@ extension GameViewController: GameCycleDelegate {
         
         var layout = MSMessageTemplateLayout()
         if let existingSession = session as? Session {
-            layout = PopperMessageLayoutBuilder(session: existingSession).generateLayout()
+            layout = PuttMessageLayoutBuilder(session: existingSession).generateLayout()
         }
         
         if let message = Session.MessageWriterType(data: session.dictionary, session: messageSession)?.message {
