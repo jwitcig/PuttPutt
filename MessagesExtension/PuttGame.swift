@@ -251,9 +251,25 @@ struct HoleSetup {
     static func scale(forHole hole: Int) -> CGFloat {
         switch hole {
         case 1:
-            return 1
+            return 0.8
+        case 2:
+            return 0.5
+        case 3:
+            return 0.5
+        case 4:
+            return 0.5
+        case 5:
+            return 0.5
+        case 6:
+            return 0.5
+        case 7:
+            return 0.5
+        case 8:
+            return 0.75
+        case 9:
+            return 0.75
         default:
-            return 2
+            return 1
         }
     }
     
@@ -275,41 +291,17 @@ struct HoleSetup {
     }
     
     static func wallSVGs(forHole hole: Int) -> [String] {
-        
         let url = Bundle(for: Putt.self).url(forResource: "hole\(hole)", withExtension: "svg")!
-    
-        let xml = SWXMLHash.parse(try! Data(contentsOf: url))
+        let data = try! Data(contentsOf: url)
+        let xml = SWXMLHash.parse(data)
         
         let wallItems = xml["svg"]["path"].filter {
+            
             (try! $0.value(ofAttribute: "id") as! String).contains("green")
         }
         
         return wallItems.map {
             try! $0.value(ofAttribute: "d") as! String
-        }
-        
-        switch hole {
-            
-            
-        case 1:
-            return [
-                "M -159,-360 L -159,359 159.49,359 160,-359.5 -159,-360 Z M -159,-360"
-            ]
-        case 2:
-            return [
-                "M -244,359 L 47.01,359 47,68 244,-227 244,-359 -244,-359 -244,359 Z M -244,359"
-            ]
-        case 3:
-            return [
-                "M -245,359 L 96,359 -45,-151.7 55,-151.7 124,123.37 244,123.37 244,-358 -245,-358 -245,359 Z M -245,359"
-            ]
-        case 4:
-            return [
-                "M 101.07,-359 C 101.07,-359 244,-240.78 244,-240.78 L 244,-73.6 C 244,-73.6 209.16,-44.79 173.88,-15.61 144.39,8.78 114.6,33.42 104.59,41.7 110.7,62.55 197.61,359 197.61,359 L -198.72,359 C -198.72,359 -112.23,75.78 -102.38,43.53 -116.74,31.65 -244,-73.6 -244,-73.6 L -244,-240.78 -101.07,-359 101.07,-359 101.07,-359 Z M 101.07,-359",
-                "M -150,-139 L -150,-119 150,-119 150,-139 -150,-139 Z M -150,-139"
-            ]
-        default:
-            fatalError()
         }
     }
 }

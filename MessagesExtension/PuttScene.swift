@@ -101,24 +101,36 @@ class PuttScene: SKScene, GameScene, SKPhysicsContactDelegate {
         
         setBackground()
         
-        let scale = HoleSetup.scale(forHole: holeNumber)
-
         HoleSetup.wallSVGs(forHole: holeNumber).map {
-            let path = SVGPathGenerator.newCGPath(fromSVGPath: $0, whileApplying: CGAffineTransform(scaleX: scale, y: -scale))!
+            let path = SVGPathGenerator.newCGPath(fromSVGPath: $0, whileApplying: CGAffineTransform(scaleX: 1, y: -1))!
             
             let wall = SKNode()
             wall.physicsBody = SKPhysicsBody(edgeLoopFrom: path)
             wall.physicsBody!.categoryBitMask = BodyCategory.wall.rawValue
             wall.physicsBody!.collisionBitMask = BodyCategory.ball.rawValue
             wall.physicsBody!.pinned = true
-            wall.physicsBody!.restitution = 1.0
+            wall.physicsBody!.restitution = 0
             wall.physicsBody!.linearDamping = 0
+            wall.physicsBody!.angularDamping = 0
             wall.physicsBody!.friction = 0
             return wall
         }.forEach(addChild)
         
-        ball.position = HoleSetup.ballLocation(forHole: holeNumber)
-                            .applying(CGAffineTransform(scaleX: scale, y: scale))
+        scaleScene(by: HoleSetup.scale(forHole: holeNumber))
+        
+//        ball.position = HoleSetup.ballLocation(forHole: holeNumber)
+//                            .applying(CGAffineTransform(scaleX: scale, y: scale))
+    }
+    
+    func pinched(gesture: UIPinchGestureRecognizer) {
+        scaleScene(by: gesture.scale)
+        gesture.scale = 1
+    }
+    
+    func scaleScene(by scale: CGFloat) {
+        let scale = SKAction.scale(by: 1/scale, duration: 0)
+        camera?.run(scale)
+        childNode(withName: "background")?.run(scale)
     }
     
     func setupGameNodes() {
@@ -132,13 +144,14 @@ class PuttScene: SKScene, GameScene, SKPhysicsContactDelegate {
         ball = childNode(withName: "Ball")! as! SKSpriteNode
         ball.size = CGSize(width: 20, height: 20)
         ball.zPosition = 2
-        ball.physicsBody = SKPhysicsBody(circleOfRadius: ball.size.width/2)
+        ball.physicsBody = SKPhysicsBody(circleOfRadius: (ball.size.width/2)*(4/5.0))
         ball.physicsBody!.categoryBitMask = BodyCategory.ball.rawValue
         ball.physicsBody!.collisionBitMask = BodyCategory.wall.rawValue
         ball.physicsBody!.contactTestBitMask = BodyCategory.hole.rawValue
-        ball.physicsBody!.mass = 0.25
+        ball.physicsBody!.mass = 25
         ball.physicsBody!.restitution = 1.0
         ball.physicsBody!.linearDamping = 1.0
+        ball.physicsBody!.angularDamping = 0
         ball.physicsBody!.friction = 1.0
         ball.physicsBody!.allowsRotation = false
         
@@ -194,6 +207,9 @@ class PuttScene: SKScene, GameScene, SKPhysicsContactDelegate {
         updateHoleLabel()
         
         gameCycleDelegate.started(game: game)
+        
+        let gesture = UIPinchGestureRecognizer(target: self, action: #selector(PuttScene.pinched(gesture:)))
+        view!.addGestureRecognizer(gesture)
     }
     
     func updateHoleLabel() {
@@ -237,6 +253,7 @@ class PuttScene: SKScene, GameScene, SKPhysicsContactDelegate {
     
     func setBackground() {
         let background = SKSpriteNode(imageNamed: "Background")
+        background.name = "background"
         background.size = size
         background.zPosition = -1
         addChild(background)
@@ -350,7 +367,7 @@ class PuttScene: SKScene, GameScene, SKPhysicsContactDelegate {
     
     func takeShot() {
         let angle = arrow.angle * (.pi / 180.0) + (.pi / 2)
-        let power = 200 * arrow.scale
+        let power = 20000 * arrow.scale
         ball.physicsBody?.applyImpulse(CGVector(dx: cos(angle)*power, dy: sin(angle)*power))
         arrow.removeFromSuperview()
         
@@ -366,7 +383,11 @@ class PuttScene: SKScene, GameScene, SKPhysicsContactDelegate {
     var arrowAnchor: CGPoint {
         return ball.position
     }
+    var shooting = false
     func touchDown(atPoint position: CGPoint) {
+        guard position.distance(to: ball.position) < 50 else { return }
+        shooting = true
+        
         arrow.backgroundColor = .clear
         if arrow.superview == nil {
             view?.addSubview(arrow)
@@ -374,6 +395,7 @@ class PuttScene: SKScene, GameScene, SKPhysicsContactDelegate {
     }
     
     func touchMoved(toPoint position: CGPoint) {
+        guard shooting else { return }
         let anchor = view!.convert(arrowAnchor, from: self)
         let location = view!.convert(position, from: self)
         
@@ -392,7 +414,9 @@ class PuttScene: SKScene, GameScene, SKPhysicsContactDelegate {
     }
     
     func touchUp(atPoint position: CGPoint) {
+        guard shooting else { return }
         takeShot()
+        shooting = false
     }
     
     func gatherSessionData() -> Session {

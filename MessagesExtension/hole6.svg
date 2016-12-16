@@ -564,7 +564,7 @@
             <stop offset="1" stop-color="rgb(0, 0, 0)" stop-opacity="1" />
         </linearGradient>
     </defs>
-    <rect id="hole6-green" stroke="none" fill="rgb(119, 181, 38)" x="-229" y="-276" width="457" height="552" />
+    <path id="hole6-green" stroke="none" fill="rgb(119, 181, 38)" d="M -229,276 L 228,276 228,-276 -229,-276 -229,276 Z M -229,276" />
     <g id="hole6-group">
         <g id="hole6-group2">
             <g id="hole6-group3" transform="translate(8, -156) scale(0.75, 0.5)" >

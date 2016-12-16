@@ -254,117 +254,117 @@
             <stop offset="1" stop-color="rgb(0, 0, 0)" stop-opacity="1" />
         </linearGradient>
     </defs>
-    <path id="hole1-green" stroke="none" fill="rgb(119, 181, 38)" d="M -120,-256 L -120,174 120.62,174 121,-255.7 -120,-256 Z M -120,-256" />
+    <path id="hole1-green" stroke="none" fill="rgb(119, 181, 38)" d="M -120,-215 L -120,215 120.62,215 121,-214.7 -120,-215 Z M -120,-215" />
     <g id="hole1-group">
-        <g id="hole1-group2" transform="translate(-120, -276) scale(0.75, 0.5)" >
+        <g id="hole1-group2" transform="translate(-120, -235) scale(0.75, 0.5)" >
             <rect id="hole1-rectangle" stroke="none" fill="url(#hole1-brickGradient-rectangle)" x="0" y="0" width="80" height="40" />
             <rect id="hole1-rectangle2" stroke="none" fill="url(#hole1-brickGradient-rectangle2)" x="0" y="0" width="80" height="40" />
         </g>
-        <g id="hole1-group3" transform="translate(-120, -276) scale(0.75, 0.1)" >
+        <g id="hole1-group3" transform="translate(-120, -235) scale(0.75, 0.1)" >
             <rect id="hole1-rectangle3" stroke="none" fill="rgb(0, 0, 0)" x="0" y="0" width="80" height="40" />
         </g>
-        <g id="hole1-group4" transform="translate(-120, -260) scale(0.75, 0.1)" >
+        <g id="hole1-group4" transform="translate(-120, -219) scale(0.75, 0.1)" >
             <rect id="hole1-rectangle4" stroke="none" fill="rgb(0, 0, 0)" x="0" y="0" width="80" height="40" />
         </g>
-        <g id="hole1-group5" transform="translate(-63, -272) scale(0.04, 0.3)" >
+        <g id="hole1-group5" transform="translate(-63, -231) scale(0.04, 0.3)" >
             <rect id="hole1-rectangle5" stroke="none" fill="rgb(0, 0, 0)" x="0" y="0" width="80" height="40" />
         </g>
-        <g id="hole1-group6" transform="translate(-120, -272) scale(0.04, 0.3)" >
+        <g id="hole1-group6" transform="translate(-120, -231) scale(0.04, 0.3)" >
             <rect id="hole1-rectangle6" stroke="none" fill="rgb(0, 0, 0)" x="0" y="0" width="80" height="40" />
         </g>
     </g>
     <g id="hole1-group7">
-        <g id="hole1-group8" transform="translate(-80, 174) scale(0.75, 0.5)" >
+        <g id="hole1-group8" transform="translate(-80, 215) scale(0.75, 0.5)" >
             <rect id="hole1-rectangle7" stroke="none" fill="url(#hole1-brickGradient-rectangle7)" x="0" y="0" width="80" height="40" />
             <rect id="hole1-rectangle8" stroke="none" fill="url(#hole1-brickGradient-rectangle8)" x="0" y="0" width="80" height="40" />
         </g>
-        <g id="hole1-group9" transform="translate(-80, 174) scale(0.75, 0.1)" >
+        <g id="hole1-group9" transform="translate(-80, 215) scale(0.75, 0.1)" >
             <rect id="hole1-rectangle9" stroke="none" fill="rgb(0, 0, 0)" x="0" y="0" width="80" height="40" />
         </g>
-        <g id="hole1-group10" transform="translate(-80, 190) scale(0.75, 0.1)" >
+        <g id="hole1-group10" transform="translate(-80, 231) scale(0.75, 0.1)" >
             <rect id="hole1-rectangle10" stroke="none" fill="rgb(0, 0, 0)" x="0" y="0" width="80" height="40" />
         </g>
-        <g id="hole1-group11" transform="translate(-23, 178) scale(0.04, 0.3)" >
+        <g id="hole1-group11" transform="translate(-23, 219) scale(0.04, 0.3)" >
             <rect id="hole1-rectangle11" stroke="none" fill="rgb(0, 0, 0)" x="0" y="0" width="80" height="40" />
         </g>
-        <g id="hole1-group12" transform="translate(-80, 178) scale(0.04, 0.3)" >
+        <g id="hole1-group12" transform="translate(-80, 219) scale(0.04, 0.3)" >
             <rect id="hole1-rectangle12" stroke="none" fill="rgb(0, 0, 0)" x="0" y="0" width="80" height="40" />
         </g>
     </g>
     <g id="hole1-group13">
-        <g id="hole1-group14" transform="translate(-20, 174) scale(0.75, 0.5)" >
+        <g id="hole1-group14" transform="translate(-20, 215) scale(0.75, 0.5)" >
             <rect id="hole1-rectangle13" stroke="none" fill="url(#hole1-brickGradient-rectangle13)" x="0" y="0" width="80" height="40" />
             <rect id="hole1-rectangle14" stroke="none" fill="url(#hole1-brickGradient-rectangle14)" x="0" y="0" width="80" height="40" />
         </g>
-        <g id="hole1-group15" transform="translate(-20, 174) scale(0.75, 0.1)" >
+        <g id="hole1-group15" transform="translate(-20, 215) scale(0.75, 0.1)" >
             <rect id="hole1-rectangle15" stroke="none" fill="rgb(0, 0, 0)" x="0" y="0" width="80" height="40" />
         </g>
-        <g id="hole1-group16" transform="translate(-20, 190) scale(0.75, 0.1)" >
+        <g id="hole1-group16" transform="translate(-20, 231) scale(0.75, 0.1)" >
             <rect id="hole1-rectangle16" stroke="none" fill="rgb(0, 0, 0)" x="0" y="0" width="80" height="40" />
         </g>
-        <g id="hole1-group17" transform="translate(37, 178) scale(0.04, 0.3)" >
+        <g id="hole1-group17" transform="translate(37, 219) scale(0.04, 0.3)" >
             <rect id="hole1-rectangle17" stroke="none" fill="rgb(0, 0, 0)" x="0" y="0" width="80" height="40" />
         </g>
-        <g id="hole1-group18" transform="translate(-20, 178) scale(0.04, 0.3)" >
+        <g id="hole1-group18" transform="translate(-20, 219) scale(0.04, 0.3)" >
             <rect id="hole1-rectangle18" stroke="none" fill="rgb(0, 0, 0)" x="0" y="0" width="80" height="40" />
         </g>
     </g>
     <g id="hole1-group19">
-        <g id="hole1-group20" transform="translate(40, 174) scale(0.75, 0.5)" >
+        <g id="hole1-group20" transform="translate(40, 215) scale(0.75, 0.5)" >
             <rect id="hole1-rectangle19" stroke="none" fill="url(#hole1-brickGradient-rectangle19)" x="0" y="0" width="80" height="40" />
             <rect id="hole1-rectangle20" stroke="none" fill="url(#hole1-brickGradient-rectangle20)" x="0" y="0" width="80" height="40" />
         </g>
-        <g id="hole1-group21" transform="translate(40, 174) scale(0.75, 0.1)" >
+        <g id="hole1-group21" transform="translate(40, 215) scale(0.75, 0.1)" >
             <rect id="hole1-rectangle21" stroke="none" fill="rgb(0, 0, 0)" x="0" y="0" width="80" height="40" />
         </g>
-        <g id="hole1-group22" transform="translate(40, 190) scale(0.75, 0.1)" >
+        <g id="hole1-group22" transform="translate(40, 231) scale(0.75, 0.1)" >
             <rect id="hole1-rectangle22" stroke="none" fill="rgb(0, 0, 0)" x="0" y="0" width="80" height="40" />
         </g>
-        <g id="hole1-group23" transform="translate(97, 178) scale(0.04, 0.3)" >
+        <g id="hole1-group23" transform="translate(97, 219) scale(0.04, 0.3)" >
             <rect id="hole1-rectangle23" stroke="none" fill="rgb(0, 0, 0)" x="0" y="0" width="80" height="40" />
         </g>
-        <g id="hole1-group24" transform="translate(40, 178) scale(0.04, 0.3)" >
+        <g id="hole1-group24" transform="translate(40, 219) scale(0.04, 0.3)" >
             <rect id="hole1-rectangle24" stroke="none" fill="rgb(0, 0, 0)" x="0" y="0" width="80" height="40" />
         </g>
     </g>
     <g id="hole1-group25">
-        <g id="hole1-group26" transform="translate(100, 174) scale(0.5, 0.5)" >
+        <g id="hole1-group26" transform="translate(100, 215) scale(0.5, 0.5)" >
             <rect id="hole1-rectangle25" stroke="none" fill="url(#hole1-brickGradient-rectangle25)" x="0" y="0" width="80" height="40" />
             <rect id="hole1-rectangle26" stroke="none" fill="url(#hole1-brickGradient-rectangle26)" x="0" y="0" width="80" height="40" />
         </g>
-        <g id="hole1-group27" transform="translate(100, 174) scale(0.5, 0.1)" >
+        <g id="hole1-group27" transform="translate(100, 215) scale(0.5, 0.1)" >
             <rect id="hole1-rectangle27" stroke="none" fill="rgb(0, 0, 0)" x="0" y="0" width="80" height="40" />
         </g>
-        <g id="hole1-group28" transform="translate(100, 190) scale(0.5, 0.1)" >
+        <g id="hole1-group28" transform="translate(100, 231) scale(0.5, 0.1)" >
             <rect id="hole1-rectangle28" stroke="none" fill="rgb(0, 0, 0)" x="0" y="0" width="80" height="40" />
         </g>
-        <g id="hole1-group29" transform="translate(137, 178) scale(0.04, 0.3)" >
+        <g id="hole1-group29" transform="translate(137, 219) scale(0.04, 0.3)" >
             <rect id="hole1-rectangle29" stroke="none" fill="rgb(0, 0, 0)" x="0" y="0" width="80" height="40" />
         </g>
-        <g id="hole1-group30" transform="translate(100, 178) scale(0.04, 0.3)" >
+        <g id="hole1-group30" transform="translate(100, 219) scale(0.04, 0.3)" >
             <rect id="hole1-rectangle30" stroke="none" fill="rgb(0, 0, 0)" x="0" y="0" width="80" height="40" />
         </g>
     </g>
     <g id="hole1-group31">
-        <g id="hole1-group32" transform="translate(-140, 174) scale(0.75, 0.5)" >
+        <g id="hole1-group32" transform="translate(-140, 215) scale(0.75, 0.5)" >
             <rect id="hole1-rectangle31" stroke="none" fill="url(#hole1-brickGradient-rectangle31)" x="0" y="0" width="80" height="40" />
             <rect id="hole1-rectangle32" stroke="none" fill="url(#hole1-brickGradient-rectangle32)" x="0" y="0" width="80" height="40" />
         </g>
-        <g id="hole1-group33" transform="translate(-140, 174) scale(0.75, 0.1)" >
+        <g id="hole1-group33" transform="translate(-140, 215) scale(0.75, 0.1)" >
             <rect id="hole1-rectangle33" stroke="none" fill="rgb(0, 0, 0)" x="0" y="0" width="80" height="40" />
         </g>
-        <g id="hole1-group34" transform="translate(-140, 190) scale(0.75, 0.1)" >
+        <g id="hole1-group34" transform="translate(-140, 231) scale(0.75, 0.1)" >
             <rect id="hole1-rectangle34" stroke="none" fill="rgb(0, 0, 0)" x="0" y="0" width="80" height="40" />
         </g>
-        <g id="hole1-group35" transform="translate(-83, 178) scale(0.04, 0.3)" >
+        <g id="hole1-group35" transform="translate(-83, 219) scale(0.04, 0.3)" >
             <rect id="hole1-rectangle35" stroke="none" fill="rgb(0, 0, 0)" x="0" y="0" width="80" height="40" />
         </g>
-        <g id="hole1-group36" transform="translate(-140, 178) scale(0.04, 0.3)" >
+        <g id="hole1-group36" transform="translate(-140, 219) scale(0.04, 0.3)" >
             <rect id="hole1-rectangle36" stroke="none" fill="rgb(0, 0, 0)" x="0" y="0" width="80" height="40" />
         </g>
     </g>
-    <path id="hole1-ballLocation" stroke="rgb(0, 0, 0)" stroke-width="1" stroke-miterlimit="10" fill="none" d="M 0,104.5" />
-    <g id="hole1-group37" transform="translate(120, 174) rotate(-90)" >
+    <path id="hole1-ballLocation" stroke="rgb(0, 0, 0)" stroke-width="1" stroke-miterlimit="10" fill="none" d="M 0,145.5" />
+    <g id="hole1-group37" transform="translate(120, 215) rotate(-90)" >
         <g id="hole1-group38">
             <g id="hole1-group39" transform="scale(0.75, 0.5)" >
                 <rect id="hole1-rectangle37" stroke="none" fill="url(#hole1-brickGradient-rectangle37)" x="0" y="0" width="80" height="40" />
@@ -458,61 +458,61 @@
     </g>
     <g id="hole1-group68">
         <g id="hole1-group69">
-            <g id="hole1-group70" transform="translate(-60, -276) scale(0.75, 0.5)" >
+            <g id="hole1-group70" transform="translate(-60, -235) scale(0.75, 0.5)" >
                 <rect id="hole1-rectangle67" stroke="none" fill="url(#hole1-brickGradient-rectangle67)" x="0" y="0" width="80" height="40" />
                 <rect id="hole1-rectangle68" stroke="none" fill="url(#hole1-brickGradient-rectangle68)" x="0" y="0" width="80" height="40" />
             </g>
-            <g id="hole1-group71" transform="translate(-60, -276) scale(0.75, 0.1)" >
+            <g id="hole1-group71" transform="translate(-60, -235) scale(0.75, 0.1)" >
                 <rect id="hole1-rectangle69" stroke="none" fill="rgb(0, 0, 0)" x="0" y="0" width="80" height="40" />
             </g>
-            <g id="hole1-group72" transform="translate(-60, -260) scale(0.75, 0.1)" >
+            <g id="hole1-group72" transform="translate(-60, -219) scale(0.75, 0.1)" >
                 <rect id="hole1-rectangle70" stroke="none" fill="rgb(0, 0, 0)" x="0" y="0" width="80" height="40" />
             </g>
-            <g id="hole1-group73" transform="translate(-3, -272) scale(0.04, 0.3)" >
+            <g id="hole1-group73" transform="translate(-3, -231) scale(0.04, 0.3)" >
                 <rect id="hole1-rectangle71" stroke="none" fill="rgb(0, 0, 0)" x="0" y="0" width="80" height="40" />
             </g>
-            <g id="hole1-group74" transform="translate(-60, -272) scale(0.04, 0.3)" >
+            <g id="hole1-group74" transform="translate(-60, -231) scale(0.04, 0.3)" >
                 <rect id="hole1-rectangle72" stroke="none" fill="rgb(0, 0, 0)" x="0" y="0" width="80" height="40" />
             </g>
         </g>
         <g id="hole1-group75">
-            <g id="hole1-group76" transform="translate(60, -276) scale(0.75, 0.5)" >
+            <g id="hole1-group76" transform="translate(60, -235) scale(0.75, 0.5)" >
                 <rect id="hole1-rectangle73" stroke="none" fill="url(#hole1-brickGradient-rectangle73)" x="0" y="0" width="80" height="40" />
                 <rect id="hole1-rectangle74" stroke="none" fill="url(#hole1-brickGradient-rectangle74)" x="0" y="0" width="80" height="40" />
             </g>
-            <g id="hole1-group77" transform="translate(60, -276) scale(0.75, 0.1)" >
+            <g id="hole1-group77" transform="translate(60, -235) scale(0.75, 0.1)" >
                 <rect id="hole1-rectangle75" stroke="none" fill="rgb(0, 0, 0)" x="0" y="0" width="80" height="40" />
             </g>
-            <g id="hole1-group78" transform="translate(60, -260) scale(0.75, 0.1)" >
+            <g id="hole1-group78" transform="translate(60, -219) scale(0.75, 0.1)" >
                 <rect id="hole1-rectangle76" stroke="none" fill="rgb(0, 0, 0)" x="0" y="0" width="80" height="40" />
             </g>
-            <g id="hole1-group79" transform="translate(117, -272) scale(0.04, 0.3)" >
+            <g id="hole1-group79" transform="translate(117, -231) scale(0.04, 0.3)" >
                 <rect id="hole1-rectangle77" stroke="none" fill="rgb(0, 0, 0)" x="0" y="0" width="80" height="40" />
             </g>
-            <g id="hole1-group80" transform="translate(60, -272) scale(0.04, 0.3)" >
+            <g id="hole1-group80" transform="translate(60, -231) scale(0.04, 0.3)" >
                 <rect id="hole1-rectangle78" stroke="none" fill="rgb(0, 0, 0)" x="0" y="0" width="80" height="40" />
             </g>
         </g>
         <g id="hole1-group81">
-            <g id="hole1-group82" transform="translate(0, -276) scale(0.75, 0.5)" >
+            <g id="hole1-group82" transform="translate(0, -235) scale(0.75, 0.5)" >
                 <rect id="hole1-rectangle79" stroke="none" fill="url(#hole1-brickGradient-rectangle79)" x="0" y="0" width="80" height="40" />
                 <rect id="hole1-rectangle80" stroke="none" fill="url(#hole1-brickGradient-rectangle80)" x="0" y="0" width="80" height="40" />
             </g>
-            <g id="hole1-group83" transform="translate(0, -276) scale(0.75, 0.1)" >
+            <g id="hole1-group83" transform="translate(0, -235) scale(0.75, 0.1)" >
                 <rect id="hole1-rectangle81" stroke="none" fill="rgb(0, 0, 0)" x="0" y="0" width="80" height="40" />
             </g>
-            <g id="hole1-group84" transform="translate(0, -260) scale(0.75, 0.1)" >
+            <g id="hole1-group84" transform="translate(0, -219) scale(0.75, 0.1)" >
                 <rect id="hole1-rectangle82" stroke="none" fill="rgb(0, 0, 0)" x="0" y="0" width="80" height="40" />
             </g>
-            <g id="hole1-group85" transform="translate(57, -272) scale(0.04, 0.3)" >
+            <g id="hole1-group85" transform="translate(57, -231) scale(0.04, 0.3)" >
                 <rect id="hole1-rectangle83" stroke="none" fill="rgb(0, 0, 0)" x="0" y="0" width="80" height="40" />
             </g>
-            <g id="hole1-group86" transform="translate(0, -272) scale(0.04, 0.3)" >
+            <g id="hole1-group86" transform="translate(0, -231) scale(0.04, 0.3)" >
                 <rect id="hole1-rectangle84" stroke="none" fill="rgb(0, 0, 0)" x="0" y="0" width="80" height="40" />
             </g>
         </g>
     </g>
-    <g id="hole1-group87" transform="translate(-140, 174) rotate(-90)" >
+    <g id="hole1-group87" transform="translate(-140, 215) rotate(-90)" >
         <g id="hole1-group88">
             <g id="hole1-group89" transform="scale(0.75, 0.5)" >
                 <rect id="hole1-rectangle85" stroke="none" fill="url(#hole1-brickGradient-rectangle85)" x="0" y="0" width="80" height="40" />
@@ -604,7 +604,7 @@
             </g>
         </g>
     </g>
-    <g id="hole1-group118" transform="translate(120, -126) rotate(-90)" >
+    <g id="hole1-group118" transform="translate(120, -85) rotate(-90)" >
         <g id="hole1-group119">
             <g id="hole1-group120" transform="scale(0.75, 0.5)" >
                 <rect id="hole1-rectangle115" stroke="none" fill="url(#hole1-brickGradient-rectangle115)" x="0" y="0" width="80" height="40" />
@@ -643,42 +643,42 @@
         </g>
     </g>
     <g id="hole1-group131">
-        <g id="hole1-group132" transform="translate(-140, -276) scale(0.25, 0.75)" >
+        <g id="hole1-group132" transform="translate(-140, -235) scale(0.25, 0.75)" >
             <rect id="hole1-rectangle127" stroke="none" fill="url(#hole1-brickGradient-rectangle127)" x="0" y="0" width="80" height="40" />
             <rect id="hole1-rectangle128" stroke="none" fill="url(#hole1-brickGradient-rectangle128)" x="0" y="0" width="80" height="40" />
         </g>
-        <g id="hole1-group133" transform="translate(-140, -276) scale(0.25, 0.1)" >
+        <g id="hole1-group133" transform="translate(-140, -235) scale(0.25, 0.1)" >
             <rect id="hole1-rectangle129" stroke="none" fill="rgb(0, 0, 0)" x="0" y="0" width="80" height="40" />
         </g>
-        <g id="hole1-group134" transform="translate(-140, -250) scale(0.25, 0.1)" >
+        <g id="hole1-group134" transform="translate(-140, -209) scale(0.25, 0.1)" >
             <rect id="hole1-rectangle130" stroke="none" fill="rgb(0, 0, 0)" x="0" y="0" width="80" height="40" />
         </g>
-        <g id="hole1-group135" transform="translate(-123, -272) scale(0.04, 0.55)" >
+        <g id="hole1-group135" transform="translate(-123, -231) scale(0.04, 0.55)" >
             <rect id="hole1-rectangle131" stroke="none" fill="rgb(0, 0, 0)" x="0" y="0" width="80" height="40" />
         </g>
-        <g id="hole1-group136" transform="translate(-140, -272) scale(0.04, 0.55)" >
+        <g id="hole1-group136" transform="translate(-140, -231) scale(0.04, 0.55)" >
             <rect id="hole1-rectangle132" stroke="none" fill="rgb(0, 0, 0)" x="0" y="0" width="80" height="40" />
         </g>
     </g>
     <g id="hole1-group137">
-        <g id="hole1-group138" transform="translate(120, -276) scale(0.25, 0.75)" >
+        <g id="hole1-group138" transform="translate(120, -235) scale(0.25, 0.75)" >
             <rect id="hole1-rectangle133" stroke="none" fill="url(#hole1-brickGradient-rectangle133)" x="0" y="0" width="80" height="40" />
             <rect id="hole1-rectangle134" stroke="none" fill="url(#hole1-brickGradient-rectangle134)" x="0" y="0" width="80" height="40" />
         </g>
-        <g id="hole1-group139" transform="translate(120, -276) scale(0.25, 0.1)" >
+        <g id="hole1-group139" transform="translate(120, -235) scale(0.25, 0.1)" >
             <rect id="hole1-rectangle135" stroke="none" fill="rgb(0, 0, 0)" x="0" y="0" width="80" height="40" />
         </g>
-        <g id="hole1-group140" transform="translate(120, -250) scale(0.25, 0.1)" >
+        <g id="hole1-group140" transform="translate(120, -209) scale(0.25, 0.1)" >
             <rect id="hole1-rectangle136" stroke="none" fill="rgb(0, 0, 0)" x="0" y="0" width="80" height="40" />
         </g>
-        <g id="hole1-group141" transform="translate(137, -272) scale(0.04, 0.55)" >
+        <g id="hole1-group141" transform="translate(137, -231) scale(0.04, 0.55)" >
             <rect id="hole1-rectangle137" stroke="none" fill="rgb(0, 0, 0)" x="0" y="0" width="80" height="40" />
         </g>
-        <g id="hole1-group142" transform="translate(120, -272) scale(0.04, 0.55)" >
+        <g id="hole1-group142" transform="translate(120, -231) scale(0.04, 0.55)" >
             <rect id="hole1-rectangle138" stroke="none" fill="rgb(0, 0, 0)" x="0" y="0" width="80" height="40" />
         </g>
     </g>
-    <g id="hole1-group143" transform="translate(-140, -126) rotate(-90)" >
+    <g id="hole1-group143" transform="translate(-140, -85) rotate(-90)" >
         <g id="hole1-group144">
             <g id="hole1-group145" transform="scale(0.75, 0.5)" >
                 <rect id="hole1-rectangle139" stroke="none" fill="url(#hole1-brickGradient-rectangle139)" x="0" y="0" width="80" height="40" />
