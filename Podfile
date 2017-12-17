@@ -12,12 +12,12 @@ target 'MessagesExtension' do
   pod 'SVGgh'
   pod 'SWXMLHash', '~> 3.0.0'
 
-  # pod 'Game', :git => 'https://github.com/jwitcig/iOS-Game'
-  pod 'iMessageTools', :git => 'https://github.com/jwitcig/iMessageTools'
-  # pod 'SwiftTools', :git => 'https://github.com/jwitcig/SwiftTools'
+  pod 'Game'#, :git => 'https://github.com/jwitcig/iOS-Game'
+  pod 'iMessageTools'#, :git => 'https://github.com/jwitcig/iMessageTools'
+  pod 'JWSwiftTools'#, :git => 'https://github.com/jwitcig/SwiftTools'
 
-  pod 'Game', :path => '/Users/Developer/Documents/Projects/iOS-Game'
-  pod 'SwiftTools', :git => '/Users/Developer/Documents/Projects/SwiftTools'
+  # pod 'Game', :path => '/Users/Developer/Documents/Projects/iOS-Game'
+  # pod 'SwiftTools', :git => '/Users/Developer/Documents/Projects/SwiftTools'
 
 end
 

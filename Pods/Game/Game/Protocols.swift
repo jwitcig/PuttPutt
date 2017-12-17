@@ -9,7 +9,7 @@
 import Messages
 import SpriteKit
 
-import SwiftTools
+import JWSwiftTools
 
 public protocol GameTyped {
     associatedtype GameType: Game

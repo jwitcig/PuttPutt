@@ -15,44 +15,28 @@ PODS:
     - GoogleInterchangeUtilities (~> 1.2)
     - GoogleToolboxForMac/NSData+zlib (~> 2.1)
   - FirebaseInstanceID (1.0.8)
-  - Game (1.0):
-    - SwiftTools
+  - Game (1.0.6):
+    - JWSwiftTools
   - GoogleInterchangeUtilities (1.2.2):
     - GoogleSymbolUtilities (~> 1.1)
   - GoogleSymbolUtilities (1.1.2)
   - GoogleToolboxForMac/Defines (2.1.0)
   - GoogleToolboxForMac/NSData+zlib (2.1.0):
     - GoogleToolboxForMac/Defines (= 2.1.0)
-  - iMessageTools (1.0.3):
-    - SwiftTools
+  - iMessageTools (1.0.4):
+    - JWSwiftTools
+  - JWSwiftTools (1.1.14)
   - SVGgh (1.8.0)
-  - SwiftTools (1.1.14)
   - SWXMLHash (3.0.3)
 
 DEPENDENCIES:
   - Cartography
   - Firebase
-  - Game (from `/Users/Developer/Documents/Projects/iOS-Game`)
-  - iMessageTools (from `https://github.com/jwitcig/iMessageTools`)
+  - Game
+  - iMessageTools
+  - JWSwiftTools
   - SVGgh
-  - SwiftTools (from `/Users/Developer/Documents/Projects/SwiftTools`)
   - SWXMLHash (~> 3.0.0)
-
-EXTERNAL SOURCES:
-  Game:
-    :path: "/Users/Developer/Documents/Projects/iOS-Game"
-  iMessageTools:
-    :git: https://github.com/jwitcig/iMessageTools
-  SwiftTools:
-    :git: "/Users/Developer/Documents/Projects/SwiftTools"
-
-CHECKOUT OPTIONS:
-  iMessageTools:
-    :commit: 3d271eaad2e91887ae0c613fd4869ee1061f2fdc
-    :git: https://github.com/jwitcig/iMessageTools
-  SwiftTools:
-    :commit: 11a72c406f6872ecd45cfde622fdec80a9b8f6b1
-    :git: "/Users/Developer/Documents/Projects/SwiftTools"
 
 SPEC CHECKSUMS:
   Cartography: c1460e99395b824d9d75360b0382faeb0b33dcd7
@@ -60,15 +44,15 @@ SPEC CHECKSUMS:
   FirebaseAnalytics: 6e58fc9b397664369ac7617fb0ba93fab6ba7b5b
   FirebaseCore: d0ed25f27b6f9158eccc439f1be6f92e81207e28
   FirebaseInstanceID: ba1e640935235e5fac39dfa816fe7660e72e1a8a
-  Game: 73f45343e9b84475b17a0bd7be1ae4f974631a9e
+  Game: 7d15ab85264fa1791af1d15a66c85a3b2b882dd7
   GoogleInterchangeUtilities: d5bc4d88d5b661ab72f9d70c58d02ca8c27ad1f7
   GoogleSymbolUtilities: 631ee17048aa5e9ab133470d768ea997a5ef9b96
   GoogleToolboxForMac: 2b2596cbb7186865e98cadf2b1e262d851c2b168
-  iMessageTools: 8d35ea8ec439c79e45321efb67beeb4fecfbcf89
+  iMessageTools: f180b9f986835371d3f1d82b287ab5c9222e3de7
+  JWSwiftTools: c07152e274af4fbb834b350fc54ab52369a41f80
   SVGgh: 6818ae637becaf7b7b062bfa2399d1e566cc6e71
-  SwiftTools: 4de240f38e2fe29ae25ce544cca6dc62072fbc19
   SWXMLHash: 80d2529d74891bb2f15305a0b9e08f2a4f229ee7
 
-PODFILE CHECKSUM: 017e5a409c1bef01ed3535476304e6eef20ef35b
+PODFILE CHECKSUM: b2005cc3f02f9b748483dad1230ce1b5bb1b16a4
 
 COCOAPODS: 1.1.1

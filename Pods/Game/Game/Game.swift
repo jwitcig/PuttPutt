@@ -7,7 +7,7 @@
 //
 
 import SpriteKit
-import SwiftTools
+import JWSwiftTools
 
 public protocol Game: class {    
     static var GameName: String { get }

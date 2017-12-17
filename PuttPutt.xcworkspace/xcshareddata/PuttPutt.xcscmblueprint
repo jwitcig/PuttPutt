@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "36EB521223F66F21A27AAB7988131972E9615B7B",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "36EB521223F66F21A27AAB7988131972E9615B7B" : 9223372036854775807,
+    "69DEEC8DAEC705382FFEDAD1BADA89EF8B816767" : 9223372036854775807
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "1E13D01F-ABD0-47C5-8AE7-4DE78E030523",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "36EB521223F66F21A27AAB7988131972E9615B7B" : "PuttPutt\/",
+    "69DEEC8DAEC705382FFEDAD1BADA89EF8B816767" : "iOS-Game\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "PuttPutt",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "PuttPutt.xcworkspace",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/jwitcig\/PuttPutt.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "36EB521223F66F21A27AAB7988131972E9615B7B"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/jwitcig\/iOS-Game.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "69DEEC8DAEC705382FFEDAD1BADA89EF8B816767"
+    }
+  ]
+}

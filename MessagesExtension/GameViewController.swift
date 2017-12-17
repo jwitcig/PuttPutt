@@ -15,7 +15,7 @@ import FirebaseAnalytics
 
 import Game
 import iMessageTools
-import SwiftTools
+import JWSwiftTools
 
 public protocol GameController {
     associatedtype GameType

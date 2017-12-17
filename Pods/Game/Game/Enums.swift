@@ -6,7 +6,7 @@
 //  Copyright © 2016 Jonah Witcig. All rights reserved.
 //
 
-import SwiftTools
+import JWSwiftTools
 
 public enum GameAction: String {
     case newGame = "New Game"
@@ -15,7 +15,7 @@ public enum GameAction: String {
 
 public enum Team {
     public enum OneOnOne: String {
-        case you, them
+        case you, them, tie
     }
     public enum Multi {
         case you, them(id: String)

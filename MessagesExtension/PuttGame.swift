@@ -15,7 +15,7 @@ import SWXMLHash
 
 import Game
 import iMessageTools
-import SwiftTools
+import JWSwiftTools
 
 infix operator |
 
